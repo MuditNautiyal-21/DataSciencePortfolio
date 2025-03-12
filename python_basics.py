@@ -46,3 +46,5 @@ def calculate_salary(base, experience, has_masters=False):
 estimated_salary = calculate_salary(60000, experience, True)
 print(f"Estimated salary: ${estimated_salary}")
 
+
+# 5. String Operations
