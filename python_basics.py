@@ -48,3 +48,7 @@ print(f"Estimated salary: ${estimated_salary}")
 
 
 # 5. String Operations
+job_description = "Looking for data scientist with Python and SQL skills."
+print(f"Python in job description: {'Python' in job_description}")
+print(f"Words in job description: {len(job_description.split())}")
+print(f"Uppercase: {job_description.upper()}")
