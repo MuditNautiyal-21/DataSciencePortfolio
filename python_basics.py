@@ -18,6 +18,16 @@ skills.append("Data Visualization")
 print(f"Updated Skills: {skills}")
 
 
+# Dictionaries - Key-Value pairs
+person = {
+    "name": "Mudit",
+    "education": "Masters in Professional Studies in Data Science & Applications",
+    "university": "University at Buffalo",
+    "experience_years": 5
+}
+print(f"Person: {person}")
+print(f"Education: {person['education']}")
+
 # 3. Control Flow
 # If-Else Statements
 experience = person["experience_years"]
