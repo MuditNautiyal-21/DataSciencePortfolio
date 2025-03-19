@@ -74,3 +74,28 @@ print("First 5 rows:\n", data[:5])
 
 # Check for missing values:
 print("Any missing values?", np.isnan(data).any())
+
+# Data Preprocessing:
+np.set_printoptions(suppress=True)
+print(data)
+
+x = data[:, :2] # Extract first 2 columns
+y = data[:, 2] # Extract last column
+print("Features:\n", x)
+print("Target Variable:\n", y)
+
+
+###################################################################################
+# Normalize & Standardize the Data
+x_min = x.min(axis=0)
+x_max = x.max(axis=0)
+
+x_normalized = (x-x_min)/(x_max - x_min)
+print("Normalized Features:\n", x_normalized)
+
+# Applying Z-Score Standardization
+x_mean = x.mean(axis=0)
+x_std = x.std(axis=0)
+
+x_standardized = (x - x_mean) / x_std
+print("Standardized Features:\n", x_standardized)
