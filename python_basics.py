@@ -62,3 +62,15 @@ job_description = "Looking for data scientist with Python and SQL skills."
 print(f"Python in job description: {'Python' in job_description}")
 print(f"Words in job description: {len(job_description.split())}")
 print(f"Uppercase: {job_description.upper()}")
+
+####################################################################################
+import numpy as np
+
+data = np.genfromtxt("dummy_data.csv", delimiter=",", skip_header=1)
+
+# Print dataset information
+print("Shape of dataset:", data.shape)
+print("First 5 rows:\n", data[:5])
+
+# Check for missing values:
+print("Any missing values?", np.isnan(data).any())
