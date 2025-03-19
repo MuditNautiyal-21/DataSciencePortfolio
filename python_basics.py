@@ -109,3 +109,27 @@ print(":::Feature Engineering:::")
 poly_features = np.array([x[:, i]*x[:,j]
                           for i, j in combinations(range(x.shape[1]), 2)]).T
 print("Polynomial Feature:\n", poly_features)
+
+#################################################################################
+# Detecting Outliers
+print("Outliers Detection")
+
+# Compute Z-Scores for each feature
+z_score = (x-x.mean(axis=0))/x.std(axis=0)
+
+# Defining threshold for outliers (commonly 3 standard deviations)
+outliers = np.abs(z_score)
+
+# Showing results:
+print("Outlier Detection (True = Outlier):\n", outliers)
+
+# Converting Z-Score into outlier Flag
+print("Outliers as Flag")
+outliers = np.abs(z_score) > 3
+print("Outlier Detection (True = Outlier, False = Normal):\n", outliers)
+
+# Detect outliers using a 2 standard deviation threshold
+print("Are There Any Outliers Beyond 2 Standard Deviations?")
+outliers_2sd = np.abs(z_score) > 2
+
+print("Outliers beyond 2 SD:\n", outliers_2sd)
