@@ -99,3 +99,13 @@ x_std = x.std(axis=0)
 
 x_standardized = (x - x_mean) / x_std
 print("Standardized Features:\n", x_standardized)
+
+###################################################################################
+# Feature Engineering:
+from itertools import combinations
+
+print(":::Feature Engineering:::")
+# Creating a new feature by multiplying existing ones:
+poly_features = np.array([x[:, i]*x[:,j]
+                          for i, j in combinations(range(x.shape[1]), 2)]).T
+print("Polynomial Feature:\n", poly_features)
